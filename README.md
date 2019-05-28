@@ -15,3 +15,5 @@ This should work on Windows normally for the Linux Follow this instructions :
   </code>
   
   - uncomment necessary line in Tests.java file
+
+  - Don't forget to change username and password in config.propreties

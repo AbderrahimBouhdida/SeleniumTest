@@ -14,10 +14,10 @@ This should work on Windows normally for the Linux Follow this instructions :
   ./chromedriver
   </code>
   
-  - uncomment necessary line in Tests.java file
+  - comment this 2 lines in Tests.java file
   <code>
-  String pathToChromeDriver = "lib/chromedriver.exe";  //Comment this line
-  System.setProperty("webdriver.chrome.driver", pathToChromeDriver);  // and this line for linux
+    String pathToChromeDriver = "lib/chromedriver.exe";  //Comment this line
+    System.setProperty("webdriver.chrome.driver", pathToChromeDriver);  // and this line for linux
   </code>
   
   - Don't forget to change username and password in config.propreties

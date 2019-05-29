@@ -23,4 +23,4 @@
 hs_err_pid*
 
 #config 
-src/main/resources/config.properties
+/home/bouhdida/IdeaProjects/SeleniumTest/src/main/resources/config.properties

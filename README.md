@@ -2,22 +2,11 @@
 
 A simple java application demonstrating the use of Selenium Framework to pull new grades from "Esprit" website.
 
-This should work on Windows normally for the Linux Follow this instructions :
-  - install ChromeDriver:
+This should work on Windows and Linux just comment the necessary line in Test.java:
+
   <code>
-  wget https://chromedriver.storage.googleapis.com/2.35/chromedriver_linux64.zip
-  </code>
-  <code>
-  unzip chromedriver_linux64.zip
-  </code>
-  <code>
-  ./chromedriver
-  </code>
-  
-  - comment this 2 lines in Tests.java file
-  <code>
-    String pathToChromeDriver = "lib/chromedriver.exe";  //Comment this line
-    System.setProperty("webdriver.chrome.driver", pathToChromeDriver);  // and this line for linux
+    String pathToChromeDriver = "lib/chromedriver.exe";  //Comment this line for linux
+    String pathToChromeDriver = "lib/chromedriver";  //Comment this line for windows
   </code>
   
   - Don't forget to change username and password in config.propreties

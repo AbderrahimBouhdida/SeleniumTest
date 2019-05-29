@@ -21,8 +21,9 @@ public class Tests {
     @Before
     public void setup() {
 
-        String pathToChromeDriver = "lib/chromedriver.exe";  //Comment this line
-        System.setProperty("webdriver.chrome.driver", pathToChromeDriver);  // and this line for linux
+        //String pathToChromeDriver = "lib/chromedriver.exe";  //Comment this line for linux
+        String pathToChromeDriver = "lib/chromedriver";  //Comment this line for windows
+        System.setProperty("webdriver.chrome.driver", pathToChromeDriver);
         driver = new ChromeDriver();
         conf.loadConfig();
     }

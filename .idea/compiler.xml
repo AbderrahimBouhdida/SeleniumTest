@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="seleniumwebdriver" />
         <module name="selenium-webdriver" />
+        <module name="SeleniumTest" />
       </profile>
     </annotationProcessing>
   </component>

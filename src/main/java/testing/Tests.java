@@ -20,10 +20,18 @@ public class Tests {
 
     @Before
     public void setup() {
+        String pathToChromeDriver;
+        if (System.getProperty("os.name").equals("Linux")){
+            pathToChromeDriver = "lib/chromedriver";  //Comment this line for windows
+            System.setProperty("webdriver.chrome.driver", pathToChromeDriver);
+            System.out.println("Running on linux");
+        }
+        else if (System.getProperty("os.name").contains("Windows")){
+            pathToChromeDriver = "lib/chromedriver.exe";  //Comment this line for linux
+            System.setProperty("webdriver.chrome.driver", pathToChromeDriver);
+            System.out.println("Running on Windows");
+        }
 
-        //String pathToChromeDriver = "lib/chromedriver.exe";  //Comment this line for linux
-        String pathToChromeDriver = "lib/chromedriver";  //Comment this line for windows
-        System.setProperty("webdriver.chrome.driver", pathToChromeDriver);
         driver = new ChromeDriver();
         conf.loadConfig();
     }

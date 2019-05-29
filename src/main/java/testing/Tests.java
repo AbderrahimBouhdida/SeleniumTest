@@ -32,7 +32,7 @@ public class Tests {
     public void testOne() throws InterruptedException {
         driver.navigate().to("https://esprit-tn.com/ESPONLINE/Online/default.aspx");
 
-        FluentWait wait = new FluentWait(driver).withTimeout(30, SECONDS).pollingEvery(5, SECONDS).ignoring(NoSuchElementException.class);
+        FluentWait wait = new FluentWait(driver).withTimeout(60, SECONDS).pollingEvery(5, SECONDS).ignoring(NoSuchElementException.class);
         boolean passed = false;
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("ContentPlaceHolder1_TextBox3")));
         driver.findElement(By.id("ContentPlaceHolder1_TextBox3")).sendKeys(String.valueOf(conf.getUsername()));

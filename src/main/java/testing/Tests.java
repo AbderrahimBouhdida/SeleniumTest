@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 
@@ -76,6 +77,7 @@ public class Tests {
 
         driver.navigate().to("https://esprit-tn.com/ESPONLINE/Etudiants/Resultat.aspx");
         List<WebElement> res = driver.findElements(By.xpath("//*[@id='ContentPlaceHolder1_GridView1']/tbody/tr"));
+        List <String> list = res.stream().map(WebElement::getText).collect(Collectors.toList());
         int x = 0;
         int rowI = res.size();
         do {
@@ -90,13 +92,13 @@ public class Tests {
             System.out.println("update found! : ");
             List<WebElement> resN = driver.findElements(By.xpath("//*[@id='ContentPlaceHolder1_GridView1']/tbody/tr"));
             for (int i = 1, j = 1; i < rowI && j < rowI; i++, j++) {
-                if (!res.get(i).getText().equals(resN.get(j).getText())) {
-                    System.out.println(res.get(i).getText());
+                if (!list.get(i).equals(resN.get(j).getText())) {
+                    System.out.println(list.get(i));
                     i--;
                     rowI++;
                 }
             }
-            res = resN;
+            res = driver.findElements(By.xpath("//*[@id='ContentPlaceHolder1_GridView1']/tbody/tr"));
             sleep();
 
         } while (true);
